@@ -20,7 +20,7 @@ module App =
         use dbContext = new GitHubData(dbOptions.Options)
         dbContext.Database.EnsureCreated() |> ignore
 
-        let webhook = PushWebHook.Parse(pushData)
+        let webhook = PushWebHook.Parse pushData
         let dateStamp = DateTime.UtcNow
 
         let createRecord (commit:PushWebHook.Commit) ={
@@ -40,7 +40,7 @@ module App =
     [<EntryPoint>]
     let main argv =
         let filename = if Array.length argv > 0 then argv.[0] else PushSample
-        let data = File.ReadAllText PushSample //filename
+        let data = File.ReadAllText filename
         loadGithubData data
         0
 

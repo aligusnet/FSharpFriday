@@ -1,4 +1,4 @@
-# F# Friday by Jeffrey T. Fritz
+# F# Friday with Jeffrey T. Fritz
 
 * Github account: <https://github.com/csharpfritz>
 
